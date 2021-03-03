@@ -2,5 +2,23 @@
 
 {% block title %} Lista {% endblock %}
 {% block content %}
-    
+<a href="newcontact/">add contato</a>
+<table class="table table-hover">
+    <thead>
+      <tr class="table-dark">
+        <th scope="col">Contato</th>
+        <th scope="col">Número</th>
+        <th scope="col">Categoria</th>
+      </tr>
+    </thead>
+    <tbody>
+    {% for contact in contacts %}
+        <tr>
+            <td><a href="/contact/{{ contact.id }}">{{ contact.contact_name }}</a></td>
+            <td>{{ contact.contact_number }}</td>
+            <td>{{ contact.category }}</td>
+        </tr>
+    {% endfor %}
+    </tbody>
+  </table>
 {% endblock %}

@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %} Contato {% endblock %}
+{% block content %}
+    <div class="offset-1 col-10 list-div">
+        <h1>Contato</h1>
+        <p>{{contact.contact_name}}</p>
+        <p>{{contact.contact_number}}</p>
+        <p>{{contact.email}}</p>
+        <p>{{contact.creation_data}}</p>
+        <p>{{contact.description}}</p>
+        <p>{{contact.category}}</p>
+    </div>
+{% endblock %}
