@@ -25,3 +25,18 @@ def newContact(request):
     else:
         form = ContactForm()
         return render(request, 'contacts/addcontact.html', {'form': form})
+
+
+def editContact(request, id):
+    contact = get_object_or_404(Contact, pk=id)
+    form = ContactForm(instance=contact)
+
+    if request.method == 'POST':
+        form = ContactForm(request.POST, instance=contact)
+        if form.is_valid():
+            contact.save()
+            return redirect('/')
+        else:
+            return render(request, 'contacts/editcontact.html', {'form': form, 'contact': contact})
+    else:
+        return render(request, 'contacts/editcontact.html', {'form': form, 'contact': contact})
