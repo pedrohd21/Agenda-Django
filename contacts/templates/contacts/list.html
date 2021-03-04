@@ -2,7 +2,28 @@
 
 {% block title %} Lista {% endblock %}
 {% block content %}
+<div>
 <h2><span class="badge bg-secondary bg-dark"><a href="newcontact/" class="link" style="color: white;">Adicionar Contato</a></span></h2>
+<form method="GET" id="search-form" class="card card-sm">
+  <div class="card-body row no-gutters align-items-center">
+      <div class="col">
+          <input class="form-control form-control-lg form-control-borderless" type="text" id="search" name="search"
+          placeholder="Digite o nome da tarefa para buscar" value="{{ request.GET.search}}">
+      </div>
+      <div class="col-auto">
+          <button  class="btn btn-dark active" type="submit"><i class="fas fa-search h4" id="search-btn" value="{{ request.GET.search}}"></i></button>
+      </div>
+  </div>
+</form>
+{% if messages %}
+<div>
+  {% for message in messages %}
+    <div class="alert alert-success"  {% if message.tags %}class="alert alert-{{message.tags}}" {% endif %}>
+      {{ message }}
+    </div>
+  {% endfor %}
+</div>
+{% endif %}
 <table class="table table-hover table-striped">
     <thead>
       <tr class="table-dark">
@@ -13,22 +34,34 @@
         <th scope="col">Categoria</th>
         <th scope="col">Editar</th>
         <th scope="col">Apagar</th>
-        <th scope="col"></th>
       </tr>
     </thead>
     <tbody>
     {% for contact in contacts %}
         <tr>
-          <th scope="row"><a href="/contact/{{ contact.id }}" class="link" style="color: black;">{{ contact.contact_name }}</a></th>
-            <td>{{ contact.contact_number }}</td>
+          <th scope="row"><a href="/contact/{{ contact.id }}" class="link" style="color: black;">{{ contact.name }}</a></th>
+            <td>{{ contact.number }}</td>
             <td>{{ contact.email }}</td>
             <td>{{ contact.creation_data }}</td>
             <td>{{ contact.category }}</td>
             <td><a href="edit/{{contact.id}}"><i class="fas fa-edit"></i></a></td>
+            <td><a href="delete/{{contact.id}}" class="delete-btn"><i class="fas fa-trash"></i></a></td>
         </tr>
     {% endfor %}
   </tbody>
   </table>
+  <div class="pagination ">
+    <ul class="pagination pagination-lg">
+        {% for pagina in contacts.paginator.page_range %}
+          {% if contacts.number == pagina %}
+            <li class="page-item active"><a class="page-link bg-dark" href="?page={{ pagina }}&termo={{ request.GET.termo }}">{{ pagina }}</a></li>
+          {% else %}
+            <li class="page-item"><a class="page-link" href="?page={{ pagina }}&termo={{ request.GET.termo }}">{{ pagina }}</a></li>
+          {%endif%}
+        {% endfor %}
+    </ul>
+  </div>
+</div>
 {% endblock %}
 
 

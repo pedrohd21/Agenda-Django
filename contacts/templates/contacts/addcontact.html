@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load crispy_forms_tags %}
 
 {% block title %} Adicionar Contato {% endblock %}
 {% block content %}
@@ -6,8 +7,8 @@
         <h1>Novo Contato:</h1>
         <form method="POST">
             {% csrf_token %}
-            {{ form.as_p }}
-            <input type="submit" class="btn btn-success" value="Criar Tarefa">
+            {{ form|crispy }}
+            <input type="submit" class="btn btn-success" value="Criar Contato">
         </form>
     </div>
 {% endblock %}

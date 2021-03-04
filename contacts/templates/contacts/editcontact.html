@@ -1,12 +1,13 @@
 {% extends 'base.html' %}
+{% load crispy_forms_tags %}
 
 {% block title %} Contato {{contact.contact_name}} {% endblock %}
 {% block content %}
     <div class="offset-1 col-10 list-div">
-        <h1>Editando Contato {{contact.contact_name}}</h1>
+        <h1>Editar Contato {{contact.contact_name}}</h1>
         <form method="POST">
             {% csrf_token %}
-            {{ form.as_p }}
+            {{ form|crispy }}
             <input type="submit" class="btn btn-success" value="Editar Contato">
         </form>
     </div>

@@ -3,12 +3,12 @@
 {% block title %} Contato {% endblock %}
 {% block content %}
     <div class="offset-1 col-10 list-div">
-        <h1>Contato</h1>
-        <p>{{contact.contact_name}}</p>
-        <p>{{contact.contact_number}}</p>
-        <p>{{contact.email}}</p>
-        <p>{{contact.creation_data}}</p>
-        <p>{{contact.description}}</p>
-        <p>{{contact.category}}</p>
+        <h1>{{contact.name}}</h1>
+        
+        <p> <strong>Numero: </strong> {{contact.number}}</p>
+        <p> <strong>Email: </strong>{{contact.email}}</p>
+        <p> <strong>Data de Criação:</strong> {{contact.creation_data}}</p>
+        <p> <strong>Categoria:</strong> {{contact.category}}</p>
+        <p> <strong>Descrição:</strong> {{contact.description}}</p>
     </div>
 {% endblock %}
