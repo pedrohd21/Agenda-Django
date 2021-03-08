@@ -1,5 +1,6 @@
 from django.db import models
 from django.utils import timezone
+from django.contrib.auth import get_user_model
 
 
 class Contact(models.Model):
@@ -9,6 +10,7 @@ class Contact(models.Model):
     creation_data = models.DateTimeField(default=timezone.now)
     description = models.TextField(blank=True)
     category = models.CharField(max_length=100, blank=True)
+    user = models.ForeignKey(get_user_model(), on_delete=models.CASCADE)
 
 
     def __str__(self):

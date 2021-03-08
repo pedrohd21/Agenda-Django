@@ -8,3 +8,32 @@
 ul.messages li{
     list-style: none;
 }
+.espaco{
+    margin: 10px 0;
+}
+.fa-trash-alt, .fa-edit{
+    color: black;
+}
+
+.auth-card{
+    margin-bottom: 30px;
+}
+.change-form-p{
+    margin-top: 30px;
+    text-align: center;
+}
+.fa-instagram{
+    color: #bc2a8d;
+    font-size: 30px;
+}
+.fa-github-square{
+    color: white;
+    font-size: 30px;
+}
+.fa-linkedin{
+    font-size: 30px;
+}
+.botao{
+    margin: 10px 0;
+    width: 100%;
+}

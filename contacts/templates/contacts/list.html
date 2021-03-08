@@ -3,7 +3,7 @@
 {% block title %} Lista {% endblock %}
 {% block content %}
 <div>
-<h2><span class="badge bg-secondary bg-dark"><a href="newcontact/" class="link" style="color: white;">Adicionar Contato</a></span></h2>
+<button type="button" class="btn btn-dark espaco btn-lg"><a href="newcontact/" class="link" style="color: white;">Adicionar Contato    <i class="fas fa-plus"></i></a></i></button>
 <form method="GET" id="search-form" class="card card-sm">
   <div class="card-body row no-gutters align-items-center">
       <div class="col">
@@ -24,7 +24,7 @@
   {% endfor %}
 </div>
 {% endif %}
-<table class="table table-hover table-striped">
+<table class="table table-hover table-striped table-responsive">
     <thead>
       <tr class="table-dark">
         <th scope="col">Contato</th>
@@ -45,7 +45,7 @@
             <td>{{ contact.creation_data }}</td>
             <td>{{ contact.category }}</td>
             <td><a href="edit/{{contact.id}}"><i class="fas fa-edit"></i></a></td>
-            <td><a href="delete/{{contact.id}}" class="delete-btn"><i class="fas fa-trash"></i></a></td>
+            <td><a href="delete/{{contact.id}}" class="delete-btn"><i class="fas fa-trash-alt"></i></a></td>
         </tr>
     {% endfor %}
   </tbody>

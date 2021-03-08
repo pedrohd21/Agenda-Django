@@ -20,14 +20,25 @@
         <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-            <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
-            </li>
-            <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Sair</a>
-            </li>
-        </ul>
+        <ul class="navbar-nav mr-auto">
+	      {% if user.is_authenticated %}
+	          <li class="nav-item">
+	              <a class="nav-link" href="/">Home</a>
+	          </li>
+	      {% else %}
+	          <li class="nav-item">
+	              <a class="nav-link" href="/accounts/login">Entrar</a>
+	          </li>
+	      {% endif %}
+	      <li class="nav-item">
+	          <a class="nav-link" href="#">Sobre nós</a>
+	      </li>
+	      {% if user.is_authenticated %}
+	          <li class="nav-item">
+	              <a class="nav-link" href="/accounts/logout">Sair</a>
+	          </li>
+	      {% endif %}
+	    </ul>
         </div>
     </div>
     </nav>
@@ -38,9 +49,12 @@
     <footer>
         <div class="card text-center">
             <div class="card-footer bg-dark text-white">
-                <h5 class="card-title">Blocos</h5>
+                <h5 class="card-title">Agenda</h5>
                 <p class="card-text">Todos direitos reservados a mim Pedro</p>
-                <a href="#" class="btn btn-primary">Lugar nenhum</a>
+                <p><a href="https://www.instagram.com/pedrohd21_/"><i class="fab fa-instagram"></i></a>
+                <a href="https://github.com/pedrohd21"><i class="fab fa-github-square"></i></a>
+                <a href="https://www.linkedin.com/in/pedro-henrique-a083b3145/"><i class="fab fa-linkedin"></i></a></p>
+                <a href="https://www.google.com/search?q=espaco&tbm=isch&ved=2ahUKEwi7ys2F2aHvAhU3JrkGHXGpB4MQ2-cCegQIABAA&oq=espaco&gs_lcp=CgNpbWcQAzIFCAAQsQMyAggAMgIIADICCAAyAggAMgIIADICCAAyAggAMgIIADICCAA6BAgjECc6CAgAELEDEIMBOgQIABBDOgcIABCxAxBDUIclWO0vYL0xaABwAHgAgAHPAYgB7giSAQUwLjUuMZgBAKABAaoBC2d3cy13aXotaW1nwAEB&sclient=img&ei=i55GYPvYG7fM5OUP8dKemAg&bih=881&biw=1745#imgrc=2QWoFPOIwNpDQM" class="btn btn-primary">Lugar nenhum</a>
             </div>
         </div>
     </footer>
