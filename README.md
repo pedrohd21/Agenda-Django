@@ -4,7 +4,7 @@
 ![Login](./contacts/static/img/Capture1.PNG)
 ## Dashboard
 ``` Onde o Fica a pre visualização dos Contatos. ```
-![Dashboard](./conteudo/static/img/Capture2.PNG)
+![Dashboard](./contacts/static/img/Capture2.PNG)
 ## Criação de um novo Contato.
 ![New Bloco](./contacts/static/img/Capture3.PNG)
 ## Edição do Contato
