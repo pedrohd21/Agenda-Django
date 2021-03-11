@@ -13,5 +13,5 @@
 ```  Onde o usuario digita uma palavra ou letra para a pesquisa. ```
 ![Pesquisa](./contacts/static/img/Capture5.PNG)
 ## Cadastro do Usuario
-``` Onde existe uma chave estrangeira, para cada novo usuário, com isso os blocos criados ficam alocados corretamente para o usuário ```
+``` Onde existe uma chave estrangeira, para cada novo usuário, com isso os contatos criados ficam alocados corretamente para o usuário ```
 ![Registro de user](./contacts/static/img/Capture6.PNG)
