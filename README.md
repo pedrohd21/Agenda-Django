@@ -1,4 +1,5 @@
 # Agenda
+### Projeto criado com Python/Django, Html/Bootstrap e banco de dados sql lite3.
 ### Uma Agenda de contatos, onde pode adicionar, editar e apagar os contatos.
 ## Login
 ![Login](./contacts/static/img/Capture1.PNG)
