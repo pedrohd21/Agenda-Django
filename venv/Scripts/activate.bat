@@ -8,7 +8,7 @@ if defined _OLD_CODEPAGE (
     "%SystemRoot%\System32\chcp.com" 65001 > nul
 )
 
-set VIRTUAL_ENV=C:\Users\pedro\Documents\GitHub\Agenda\venv
+set VIRTUAL_ENV=C:\Users\Pedro\Documents\GitHub\Agenda-Django\venv
 
 if not defined PROMPT set PROMPT=$P$G
 
